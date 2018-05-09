@@ -16,7 +16,7 @@ position of its elements **as well as** the scale and vertical position.
 
 * [Browser support](#browser-support)
 * [How it works](#how-it-works)
-* [Gotchas]($gotchas)
+* [Gotchas](#gotchas)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
