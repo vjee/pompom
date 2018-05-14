@@ -1,4 +1,4 @@
-import Card from "./../classes/Card"
+import Card from './../classes/Card'
 
 /**
  * Create a new Card class with a user provided DOM tree.
@@ -8,23 +8,23 @@ import Card from "./../classes/Card"
  */
 export default (userDOMCreator, userDOMUpdator) => {
   return class PompomCard extends Card {
-    constructor(parent, config, data, dataIndex) {
-      super(parent, config, data, dataIndex);
+    constructor (parent, config, data, dataIndex) {
+      super(parent, config, data, dataIndex)
 
       this.createDOM = () => {
-        this.el = userDOMCreator(this.data);
-        this.el.dataset.pompomCard = "";
-        this.el.style.transform = `translate(${this.x}px, ${this.y}px) scale(${this.scale})`;
-        this.el.style.willChange = "transform";
+        this.el = userDOMCreator(this.data)
+        this.el.dataset.pompomCard = ''
+        this.el.style.transform = `translate(${this.x}px, ${this.y}px) scale(${this.scale})`
+        this.el.style.willChange = 'transform'
       }
 
       this.updateDOM = () => {
-        userDOMUpdator(this.el, this.data);
+        userDOMUpdator(this.el, this.data)
       }
 
-      this.createDOM();
+      this.createDOM()
 
-      this.setAnimationFunction();
+      this.setAnimationFunction()
     }
-  };
-};
+  }
+}

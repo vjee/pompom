@@ -7,15 +7,15 @@
 * @param {Function} mutationCompleteFunc The function that checks if the mutation was completed
 */
 export default (node, mutationFunc, mutationCompleteFunc) => {
- return new Promise((resolve, reject) => {
-   new MutationObserver((mutationList, observer) => {
-     for (let mutation of mutationList) {
-       if (mutationCompleteFunc(mutation)) {
-         resolve();
-         observer.disconnect();
-       }
-     }
-   }).observe(node, { childList: true });
-   mutationFunc();
- });
+  return new Promise((resolve, reject) => {
+    new MutationObserver((mutationList, observer) => {
+      for (let mutation of mutationList) {
+        if (mutationCompleteFunc(mutation)) {
+          resolve()
+          observer.disconnect()
+        }
+      }
+    }).observe(node, { childList: true })
+    mutationFunc()
+  })
 }

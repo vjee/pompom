@@ -1,4 +1,4 @@
-[![Travis CI](https://img.shields.io/travis/vjee/pompom.svg)](https://travis-ci.org/vgesteljasper/Pompom)
+[![Travis CI](https://img.shields.io/travis/vjee/pompom.svg)](https://travis-ci.org/vjee/pompom)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 # Pompom

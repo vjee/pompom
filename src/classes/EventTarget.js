@@ -1,38 +1,38 @@
 class EventTarget {
-  constructor() {
-    this.listeners = {};
+  constructor () {
+    this.listeners = {}
   }
 
-  addEventListener(type, callback) {
+  addEventListener (type, callback) {
     if (!(type in this.listeners)) {
-      this.listeners[type] = [];
+      this.listeners[type] = []
     }
-    this.listeners[type].push(callback);
+    this.listeners[type].push(callback)
   }
 
-  removeEventListener(type, callback) {
+  removeEventListener (type, callback) {
     if (!(type in this.listeners)) {
-      return;
+      return
     }
-    const stack = this.listeners[type];
+    const stack = this.listeners[type]
     for (let i = 0, l = stack.length; i < l; i++) {
       if (stack[i] === callback) {
-        stack.splice(i, 1);
-        return;
+        stack.splice(i, 1)
+        return
       }
     }
   }
 
-  dispatchEvent(event) {
+  dispatchEvent (event) {
     if (!(event.type in this.listeners)) {
-      return true;
+      return true
     }
-    const stack = this.listeners[event.type];
+    const stack = this.listeners[event.type]
     for (let i = 0, l = stack.length; i < l; i++) {
-      stack[i].call(this, event);
+      stack[i].call(this, event)
     }
-    return !event.defaultPrevented;
+    return !event.defaultPrevented
   }
 }
 
-export default EventTarget;
+export default EventTarget
